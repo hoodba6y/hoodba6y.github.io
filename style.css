@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('background.jpg');
+    background-size: cover;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #8B00FF;
+}
+p {
+    font-family: 'Times New Roman', Times, serif; /* Шрифт */
+    font-weight: bold; /* Полужирный */
+    font-size: 40px; /* Размер шрифта */
+}
+.header img {
+    cursor: pointer;
+}
+
+.image-text {
+    display: flex;
+    align-items: center;
+}
+
+    .image-text img {
+        margin-right: 10px;
+    }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 2s;
+}
+

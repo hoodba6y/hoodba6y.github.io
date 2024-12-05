@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Сладких снов</title>
+    
+
+    <div class="container">
+       
+        <p id="string-example"></p>
+    </div>
+
+    <div class="container">
+        
+        <p id="number-example"></p>
+    </div>
+
+    <div class="container">
+        
+        <p id="math-example"></p>
+    </div>
+
+    <div class="container">
+       
+        <p id="date-example"></p>
+    </div>
+
+    <script>
+        // Пример использования объекта String
+        const str = "JavaScript is amazing!";
+        const stringExamples = `
+          
+        `;
+        document.getElementById("string-example").innerHTML = stringExamples;
+
+        // Пример использования объекта Number
+        const num = 10.5;
+        const numberExamples = `
+            
+        `;
+        document.getElementById("number-example").innerHTML = numberExamples;
+
+        // Пример использования объекта Math
+        const pi = Math.PI;
+        const mathExamples = `
+            
+        `;
+        document.getElementById("math-example").innerHTML = mathExamples;
+
+        // Пример использования объекта Date
+        const currentDate = new Date();
+        const dateExamples = `
+            
+        `;
+        document.getElementById("date-example").innerHTML = dateExamples;
+    </script>
+    <script>
+        function transferData() {
+            let inputField = document.getElementById("inputField").value;
+            let outputField = document.getElementById("outputField");
+
+            if (isNaN(inputField) || inputField.trim() === "") {
+                outputField.value = "Ошибка ввода";
+            } else {
+                let number = parseFloat(inputField);
+                // Например, вычисление 2 <em> число + 3
+                let result = 2 * number + 3;
+                outputField.value = result;
+            }
+    }
+</script>
+
+</head>
+    }
+</script>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html"><img src="logo.png" alt="Логотип" width="100"></a>
+    </div>
+    <h1 class="fade-in">Один из альбомов</h1>
+    <div class="image-text">
+        <img src="example.png" alt="обложка" width="300">
+        альбом 'Сладких снов".</p>
+    </div>
+    <a href="albumbio.txt">читать био</a>
+    
+    <h1>Примеры стандартных объектов</h1>
+    <h2>String</h2>
+    <div id="stringExample"></div>
+    
+    <h2>Number</h2>
+    <div id="numberExample"></div>
+    
+    <h2>Math</h2>
+    <div id="mathExample"></div>
+    
+    <h2>Date</h2>
+    <div id="dateExample"></div>
+    <h1>Передача данных в программу</h1>
+    <form onsubmit="event.preventDefault(); transferData();">
+        <label for="inputField">Введите число:</label>
+        <input type="text" id="inputField" required>
+        <br>
+        <label for="outputField">Результат:</label>
+        <input type="text" id="outputField" readonly>
+        <br>
+        <button type="submit">Перенести данные</button>
+    </form>
+</body>
+</html>

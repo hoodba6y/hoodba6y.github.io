@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Сладких снов</title>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html"><img src="logo.png" alt="Логотип" width="100"></a>
+    </div>
+    <h1 class="fade-in">Один из альбомов</h1>
+    <div class="image-text">
+        <img src="krug.png" alt="обложка" width="300">
+        альбом 'Опиаты круг".</p>
+    </div>
+    <a href="krugbio.txt">читать био</a>
+    <script>
+        // 1. Ввод-вывод, работа с данными
+        function выводПриветствия() {
+          alert('Привет!');
+        document.write('Привет!');
+        }
+
+        function суммаЧисел() {
+          let x = 5, y = 10; // Пример значений
+          let сумма = x + y;
+          document.write('<br>Сумма x и y: ' + сумма);
+        }
+
+        function тестированиеParse() {
+          let примеры = ['9', '50.7', 'текст'];
+          примеры.forEach(пример => {
+          let числоЦелое = parseInt(пример);
+          let числоДесятичное = parseFloat(пример);
+          let проверкаНаNaN = isNaN(числоЦелое);
+          document.write('<br>Пример: ' + пример + ' | Целое: ' + числоЦелое + ' | Десятичное: ' + числоДесятичное + ' | NaN? ' + проверкаНаNaN);
+        });
+        }
+
+        function кнопкаAlert() {
+        alert('Кнопка была нажата!');
+        }
+
+        function сложениеПодстрок() {
+        let str1 = 'Привет, ';
+        let str2 = 'мир!';
+        document.write('<br>' + (str1 + str2));
+        }
+
+        function открытьДругойФайл() {
+        window.open('https://www.genius.com', '_blank');
+        }
+
+        function ветвлениеПоВозрасту() {
+        let возраст = 17; // Задайте возраст
+        if (возраст >= 18) {
+            window.open('https://www.genius.com', '_blank');
+        } else {
+        alert('Вам нет 18-ти лет');
+        }
+    }
+
+        function выборПоЗначению() {
+        let десерт = 'билет'; // Пример значения
+        switch (десерт) {
+        case 'вип':
+            alert('Стоимость: 100$');
+            break;
+        case 'танцпол':
+            alert('Стоимость: 50$');
+            break;
+        case 'митнгрид':
+            alert('Стоимость: 30$');
+            break;
+        default:
+            alert('билет не найден');
+            break;
+        }
+    }
+
+        function вывестиСтроки() {
+        document.write('<br>Цикл while:<br>');
+        let i = 0;
+        while (i < 20) {
+          document.write('Строка ' + (i + 1) + '<br>');
+        i++;
+        }
+
+        document.write('<br>Цикл do while:<br>');
+        i = 0;
+        do {
+        document.write('Строка ' + (i + 1) + '<br>');
+        i++;
+    } while (i < 20);
+
+        document.write('<br>Цикл for:<br>');
+        for (let j = 0; j < 20; j++) {
+        document.write('Строка ' + (j + 1) + '<br>');
+        }
+    }
+</script>
+    <button onclick="выводПриветствия()">Вывести приветствие</button>
+    <button onclick="суммаЧисел()">Посчитать сумму</button>
+    <button onclick="тестированиеParse()">Тестировать parse</button>
+    <button onclick="кнопкаAlert()">Нажмите на меня</button>
+    <button onclick="сложениеПодстрок()">Сложить подстроки</button>
+    <button onclick="открытьДругойФайл()">Открыть другой файл</button>
+    <button onclick="ветвлениеПоВозрасту()">Проверка возраста</button>
+    <button onclick="выборПоЗначению()">Проверка билета</button>
+    <button onclick="вывестиСтроки()">Вывести строки</button>
+    
+    
+</body>
+</html>

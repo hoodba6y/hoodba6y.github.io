@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Главная страница</title>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html"><img src="logo.png" alt="Логотип" width="100"></a>
+    </div>
+    <h1 class="fade-in">Добро пожаловать!</h1>
+    <nav>
+        <ul>
+            <li><a href="page1.html">Страница 1</a></li>
+            <li><a href="page2.html">Страница 2</a></li>
+            <li><a href="page3.html">Страница 3</a></li>
+        </ul>
+        <ol>
+            <li><a href="page1.html">Страница 1</a></li>
+            <li><a href="page2.html">Страница 2</a></li>
+            <li><a href="page3.html">Страница 3</a></li>
+           
+        </ol>
+    </nav>
+    <a href="tour.jpg">открыть расписание тура</a>
+    <iframe src="page1.html"></iframe>
+    <iframe src="page2.html"></iframe>
+    <iframe src="page3.html"></iframe>
+
+<form>
+    <label for="name">Имя:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <h1> <label>Выберите ваш пол:</label><br> </h1>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Мужчина</label><br>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Женщина</label><br><br>
+
+    <label for="country">Страна:</label>
+    <select id="country" name="country">
+        <option value="ru">Россия</option>
+        <option value="us">США</option>
+        <option value="fr">Франция</option>
+    </select><br><br>
+
+    <input type="submit" value="Отправить">
+</form>
+</body>
+</html>

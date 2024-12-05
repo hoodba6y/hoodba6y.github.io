@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Страница 1</title>
+    <script>
+        let students = [];
+
+        function addStudent() {
+            const lastName = document.getElementById("lastName").value;
+            const score = parseFloat(document.getElementById("score").value);
+            if (!lastName || isNaN(score)) {
+                alert("Пожалуйста, введите корректные данные.");
+                return;
+            }
+
+            students.push({ lastName, score });
+            students.sort((a, b) => a.lastName.localeCompare(b.lastName)); // Сортировка по фамилии
+            document.getElementById("lastName").value = ""; // Очистка полей
+            document.getElementById("score").value = "";
+
+            renderTable();
+        }
+
+        function renderTable() {
+            const tableBody = document.getElementById("studentsTableBody");
+            tableBody.innerHTML = ""; // Очистка текущей таблицы
+
+            let totalScore = 0;
+            let passingCount = 0;
+            const maxScore = 100;
+
+            students.forEach(student => {
+                totalScore += student.score;
+                const passed = student.score >= 50 ? "Да" : "Нет";
+                if (passed === "Да") passingCount++;
+
+                const row = `<tr>
+                    <td>${student.lastName}</td>
+                    <td>${student.score}</td>
+                    <td>${passed}</td>
+                    <td>${(student.score / maxScore * 100).toFixed(2)}%</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+
+            document.getElementById("totalScore").innerText = totalScore;
+            document.getElementById("studentCount").innerText = students.length;
+            document.getElementById("passingCount").innerText = passingCount;
+        }
+    </script>
+</head>
+<body>
+    <h1>Введите данные исполнителей</h1>
+    <form onsubmit="event.preventDefault(); addStudent();">
+        <label for="lastName">Имя:</label>
+        <input type="text" id="lastName" required>
+        <br>
+        <label for="score">Кол-во концертов:</label>
+        <input type="number" id="score" required min="0" max="100">
+        <br>
+        <button type="submit">Добавить исполнителя</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Кол-во концертов</th>
+                <th>Необходимая часть плана выполнена</th>
+                <th>Процент</th>
+            </tr>
+        </thead>
+        <tbody id="studentsTableBody">
+        </tbody>
+    </table>
+
+    <h2>Статистика</h2>
+    <p>Общее количество исполнителей: <span id="studentCount">0</span></p>
+    <p>Количество исполнителей с выполненым планом: <span id="passingCount">0</span></p>
+    <p>Общее кол-во концертов всех исполнителей: <span id="totalScore">0</span></p>
+</body>
+</html>
